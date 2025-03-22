@@ -1,7 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.example.metlife",
-    "sha256_cert_fingerprints": ["E796B21DA8868D36382F5EDF8C0AEED55E84A9DEAA99C3E532F4780A92B7C08F"]  }
-}]
