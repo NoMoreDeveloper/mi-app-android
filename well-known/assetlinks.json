@@ -1,0 +1,7 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "com.example.metlife",
+    "package_name": "com.example.metlife",
+    "sha256_cert_fingerprints": ["E7:96:B2:1D:A8:86:8D:36:38:2F:5E:DF:8C:0A:EE:D5:5E:84:A9:DE:AA:99:C3:E5:32:F4:78:0A:92:B7:C0:8F"]  }
+}]
