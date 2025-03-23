@@ -6,17 +6,47 @@
         // Extraer el parámetro 'ref' de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const ref = urlParams.get('ref');
-        
-        // Redirigir al Dynamic Link después de 5 segundos
-        setTimeout(() => {
+
+        // Función para redirigir al Dynamic Link
+        function redirectToDynamicLink() {
             if (ref) {
-                window.location.href = `https://metlife58d49.page.link/6SuK?ref=${encodeURIComponent(ref)}`;
+                const dynamicLink = `https://metlife58d49.page.link/6SuK?ref=${encodeURIComponent(ref)}`;
+                window.location.href = dynamicLink;
             }
-        }, 5000);
+        }
+
+        // Redirigir automáticamente después de 5 segundos
+        setTimeout(redirectToDynamicLink, 5000);
+
+        // Función para copiar el enlace al portapapeles
+        function copyLink() {
+            const linkToCopy = `https://metlife58d49.page.link/6SuK?ref=${encodeURIComponent(ref)}`;
+            navigator.clipboard.writeText(linkToCopy)
+                .then(() => alert('¡Enlace copiado al portapapeles!'))
+                .catch(err => console.error('Error al copiar:', err));
+        }
     </script>
 </head>
 <body>
-    <p>Si la descarga no inicia automáticamente, <a href="https://nomoredeveloper.github.io/mi-app-android/Adm.apk">haz clic aquí</a>.</p>
-    <p>Tras la instalación, serás redirigido automáticamente. Si no, <a href="https://metlife58d49.page.link/6SuK?ref=<?php echo $_GET['ref']; ?>">haz clic aquí</a>.</p>
+    <p>
+        Si la descarga no inicia automáticamente, 
+        <a href="https://nomoredeveloper.github.io/mi-app-android/Adm.apk">haz clic aquí</a>.
+    </p>
+    <p>
+        Tras la instalación, serás redirigido automáticamente en <span id="countdown">5</span> segundos. 
+        Si no, <a href="#" onclick="redirectToDynamicLink()">haz clic aquí</a> o 
+        <button onclick="copyLink()">Copia el enlace aquí</button>.
+    </p>
+
+    <script>
+        // Contador regresivo para la redirección
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) clearInterval(timer);
+        }, 1000);
+    </script>
 </body>
 </html>
