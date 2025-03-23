@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descargando App</title>
+    <script>
+        // Extraer el parámetro 'ref' de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        
+        // Redirigir al Dynamic Link después de 5 segundos
+        setTimeout(() => {
+            if (ref) {
+                window.location.href = `https://metlife58d49.page.link/6SuK?ref=${encodeURIComponent(ref)}`;
+            }
+        }, 5000);
+    </script>
+</head>
+<body>
+    <p>Si la descarga no inicia automáticamente, <a href="https://nomoredeveloper.github.io/mi-app-android/Adm.apk">haz clic aquí</a>.</p>
+    <p>Tras la instalación, serás redirigido automáticamente. Si no, <a href="https://metlife58d49.page.link/6SuK?ref=<?php echo $_GET['ref']; ?>">haz clic aquí</a>.</p>
+</body>
+</html>
