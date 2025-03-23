@@ -16,14 +16,21 @@
         }
 
         // Redirigir automáticamente después de 5 segundos
-        setTimeout(redirectToDynamicLink, 500000);
+        setTimeout(redirectToDynamicLink, 5000); // Cambiado a 5 segundos
 
         // Función para copiar el enlace al portapapeles
         function copyLink() {
+            if (!ref) {
+                alert("No se detectó un código de referido válido.");
+                return;
+            }
             const linkToCopy = `https://metlife58d49.page.link/6SuK?ref=${encodeURIComponent(ref)}`;
             navigator.clipboard.writeText(linkToCopy)
                 .then(() => alert('¡Enlace copiado al portapapeles!'))
-                .catch(err => console.error('Error al copiar:', err));
+                .catch(err => {
+                    console.error('Error al copiar:', err);
+                    alert('Hubo un error al copiar el enlace. Inténtalo de nuevo.');
+                });
         }
     </script>
 </head>
